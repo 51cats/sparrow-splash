@@ -1,6 +1,6 @@
-This is a simple, Javascript, animated slash-screen experiment with clickable, bouncy parts.
+This is a simple, Javascript, animated splash-screen experiment with clickable, bouncy parts.
 
-I don't know jQuery, and I don't know why this animation doesn't work quite right on Chrome web browsers yet will work right on others such a Firefox.
+I don't know jQuery, and I don't know why this animation doesn't work quite right on Chrome web browsers, yet it will work right on other browsers such a Firefox.
 
 KNOWN CHROME ISSUES:
 

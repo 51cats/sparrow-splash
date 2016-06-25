@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SparrowsBarn Splash</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<script type="text/javascript">
+
+//================================
+//===  SHRINK TO FIT VIEWPORT  ===
+//================================
+
+var optimum_width  = 503;
+var optimum_height = 593;
+
+var viewport_width  = document.documentElement.clientWidth;
+var viewport_height = document.documentElement.clientHeight;
+
+var percent_width  = Math.round( ( viewport_width  / optimum_width  ) * 100 );
+var percent_height = Math.round( ( viewport_height / optimum_height ) * 100 );
+
+var scale_factor = 100;
+
+if ( percent_height < percent_width ) {
+  if ( percent_height < 100 ) { scale_factor = percent_height; }
+}
+else {
+  if ( percent_width < 100 ) { scale_factor = percent_width; }
+}
+
+//========================
+//===  SET STYLESHEET  ===
+//========================
+
+var style = document.createElement('style');
+
+style.type = 'text/css';
+
+style.innerHTML = "body {\
+  overflow: hidden;\
+  background-image: url('image/wall.png');\
+  background-size: " + Math.round( 1349 * scale_factor / 100 ) + "px " + Math.round( 541 * scale_factor / 100 ) + "px;\
+  margin: 0;\
+  border: 0;\
+  padding: 0;\
+}\
+\
+.container {\
+  width: " + Math.round( 503 * scale_factor / 100 ) + "px;\
+  height: " + Math.round( 593 * scale_factor / 100 ) + "px;\
+  margin-top: 0;\
+  margin-bottom: 0;\
+  margin-left: auto;\
+  margin-right: auto;\
+  border: 0;\
+  padding: 0;\
+\
+  -webkit-perspective: 1000px;\
+     -moz-perspective: 1000px;\
+       -o-perspective: 1000px;\
+          perspective: 1000px;\
+  -webkit-perspective-origin: 50% 23%;\
+     -moz-perspective-origin: 50% 23%;\
+       -o-perspective-origin: 50% 23%;\
+          perspective-origin: 50% 23%;\
+  -webkit-transform-style: preserve-3d;\
+     -moz-transform-style: preserve-3d;\
+       -o-transform-style: preserve-3d;\
+          transform-style: preserve-3d;\
+}\
+\
+.sign {\
+  display: block;\
+  position: absolute;\
+  top: " + Math.round( 10 * scale_factor / 100 ) + "px;\
+  left: " + Math.round( 63 * scale_factor / 100 ) + "px;\
+  width: " + Math.round( 440 * scale_factor / 100 ) + "px;\
+  height: " + Math.round( 158 * scale_factor / 100 ) + "px;\
+  background: url('image/sign.png');\
+  background-size: " + Math.round( 440 * scale_factor / 100 ) + "px " + Math.round( 158 * scale_factor / 100 ) + "px;\
+\
+  -webkit-transform-origin: top right;\
+     -moz-transform-origin: top right;\
+       -o-transform-origin: top right;\
+          transform-origin: top right;\
+  -webkit-transform: scale3d(0,0,1);\
+     -moz-transform: scale3d(0,0,1);\
+       -o-transform: scale3d(0,0,1);\
+          transform: scale3d(0,0,1);\
+}\
+\
+/* Chrome, Safari, Opera */\
+@-webkit-keyframes flightPath\
+{\
+  0% {\
+    top: " + Math.round( 10 * scale_factor / 100 ) + "px;\
+    -webkit-transform-origin: top right;\
+    -webkit-transform: scale3d(0,0,1);\
+  }\
+\
+  50% {\
+    top: " + Math.round( 260 * scale_factor / 100 ) + "px;\
+    -webkit-transform-origin: bottom left;\
+    -webkit-transform: scale3d(.165,.33,1);\
+  }\
+\
+  100% {\
+    top: " + Math.round( 10 * scale_factor / 100 ) + "px;\
+    -webkit-transform-origin: center center;\
+    -webkit-transform: scale3d(.4,1,1);\
+  }\
+}\
+\
+/* Standard syntax */\
+@keyframes flightPath\
+{\
+  0% {\
+    top: " + Math.round( 10 * scale_factor / 100 ) + "px;\
+     -moz-transform-origin: top right;\
+       -o-transform-origin: top right;\
+          transform-origin: top right;\
+    -moz-transform: scale3d(0,0,1);\
+      -o-transform: scale3d(0,0,1);\
+         transform: scale3d(0,0,1);\
+  }\
+\
+  50% {\
+    top: " + Math.round( 260 * scale_factor / 100 ) + "px;\
+     -moz-transform-origin: bottom left;\
+       -o-transform-origin: bottom left;\
+          transform-origin: bottom left;\
+    -moz-transform: scale3d(.165,.33,1);\
+      -o-transform: scale3d(.165,.33,1);\
+         transform: scale3d(.165,.33,1);\
+  }\
+\
+  100% {\
+    top: " + Math.round( 10 * scale_factor / 100 ) + "px;\
+     -moz-transform-origin: center center;\
+       -o-transform-origin: center center;\
+          transform-origin: center center;\
+    -moz-transform: scale3d(.4,1,1);\
+      -o-transform: scale3d(.4,1,1);\
+         transform: scale3d(.4,1,1);\
+  }\
+}\
+\
+.sign_drive {\
+  display: block;\
+  position: absolute;\
+  top: " + Math.round( 10 * scale_factor / 100 ) + "px;\
+  left: " + Math.round( 63 * scale_factor / 100 ) + "px;\
+  width: " + Math.round( 440 * scale_factor / 100 ) + "px;\
+  height: " + Math.round( 158 * scale_factor / 100 ) + "px;\
+  background: url('image/sign.png');\
+  background-size: " + Math.round( 440 * scale_factor / 100 ) + "px " + Math.round( 158 * scale_factor / 100 ) + "px;\
+\
+  -webkit-transform-origin: top right;\
+     -moz-transform-origin: top right;\
+       -o-transform-origin: top right;\
+          transform-origin: top right;\
+  -webkit-transform: scale3d(0,0,1);\
+     -moz-transform: scale3d(0,0,1);\
+       -o-transform: scale3d(0,0,1);\
+          transform: scale3d(0,0,1);\
+\
+  /* Chrome, Safari, Opera */\
+  -webkit-animation-name: flightPath;\
+  -webkit-animation-duration: 3s;\
+  -webkit-animation-timing-function: ease-out;\
+  -webkit-animation-delay: 500ms;\
+  -webkit-animation-iteration-count: 1;\
+  -webkit-animation-direction: forward;\
+  -webkit-animation-fill-mode: forwards;\
+  -webkit-animation-play-state: running;\
+\
+  /* Standard syntax */\
+  animation-name: flightPath;\
+  animation-duration: 3s;\
+  animation-timing-function: ease-out;\
+  animation-delay: 500ms;\
+  animation-iteration-count: 1;\
+  animation-direction: forward;\
+  animation-fill-mode: forwards;\
+  animation-play-state: running;\
+\
+}\
+.sign_parked {\
+  display: block;\
+  position: absolute;\
+  top: " + Math.round( 10 * scale_factor / 100 ) + "px;\
+  left: " + Math.round( 63 * scale_factor / 100 ) + "px;\
+  width: " + Math.round( 440 * scale_factor / 100 ) + "px;\
+  height: " + Math.round( 158 * scale_factor / 100 ) + "px;\
+  background: url('image/sign.png');\
+  background-size: " + Math.round( 440 * scale_factor / 100 ) + "px " + Math.round( 158 * scale_factor / 100 ) + "px;\
+\
+  -webkit-transform-origin: center center;\
+     -moz-transform-origin: center center;\
+       -o-transform-origin: center center;\
+          transform-origin: center center;\
+  -webkit-transform: scale3d(.4,1,1);\
+     -moz-transform: scale3d(.4,1,1);\
+       -o-transform: scale3d(.4,1,1);\
+          transform: scale3d(.4,1,1);\
+}\
+\
+.title {\
+  opacity: 0;\
+  display: block;\
+  position: absolute;\
+  top: " + Math.round( 14 * scale_factor / 100 ) + "px;\
+  left: " + Math.round( 34 * scale_factor / 100 ) + "px;\
+  width: " + Math.round( 305 * scale_factor / 100 ) + "px;\
+  height: " + Math.round( 100 * scale_factor / 100 ) + "px;\
+  background: url('image/title.png');\
+  background-size: " + Math.round( 305 * scale_factor / 100 ) + "px " + Math.round( 100 * scale_factor / 100 ) + "px;\
+  -webkit-transition: opacity 1.5s ease-in-out;\
+     -moz-transition: opacity 1.5s ease-in-out;\
+       -o-transition: opacity 1.5s ease-in-out;\
+          transition: opacity 1.5s ease-in-out;\
+}\
+\
+.title_alt {\
+  display: block;\
+  position: absolute;\
+  top: " + Math.round( 14 * scale_factor / 100 ) + "px;\
+  left: " + Math.round( 34 * scale_factor / 100 ) + "px;\
+  width: " + Math.round( 305 * scale_factor / 100 ) + "px;\
+  height: " + Math.round( 100 * scale_factor / 100 ) + "px;\
+  background: url('image/title.png');\
+  background-size: " + Math.round( 305 * scale_factor / 100 ) + "px " + Math.round( 100 * scale_factor / 100 ) + "px;\
+  -webkit-mask-position: 0px 0px;\
+  -webkit-transition: -webkit-mask-position 1.5s ease;\
+  -webkit-mask-size: " + Math.round( 740 * scale_factor / 100 ) + "px " + Math.round( 100 * scale_factor / 100 ) + "px;\
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top,\
+     color-stop(  0%, transparent),\
+     color-stop( 50%, transparent),\
+     color-stop( 50%, rgba(0, 0, 0, 1)),\
+     color-stop( 90%, rgba(0, 0, 0, 1)),\
+     color-stop(100%, transparent));\
+}\
+\
+.logo {\
+  visibility: hidden;\
+  display: block;\
+  position: absolute;\
+  top: " + Math.round( 139 * scale_factor / 100 ) + "px;\
+  left: " + Math.round( 63 * scale_factor / 100 ) + "px;\
+  width: " + Math.round( 440 * scale_factor / 100 ) + "px;\
+  height: " + Math.round( 370 * scale_factor / 100 ) + "px;\
+  background: url('image/logo.png');\
+  background-size: " + Math.round( 440 * scale_factor / 100 ) + "px " + Math.round( 370 * scale_factor / 100 ) + "px;\
+  -webkit-transform-origin: center top;\
+     -moz-transform-origin: center top;\
+       -o-transform-origin: center top;\
+          transform-origin: center top;\
+  -webkit-transform: rotate3d(1,0,0,-90deg);\
+     -moz-transform: rotate3d(1,0,0,-90deg);\
+       -o-transform: rotate3d(1,0,0,-90deg);\
+          transform: rotate3d(1,0,0,-90deg);\
+}\
+\
+.bubble {\
+  visibility: hidden;\
+  display: block;\
+  position: absolute;\
+  top: " + Math.round( 20 * scale_factor / 100 ) + "px;\
+  left: " + Math.round( 20 * scale_factor / 100 ) + "px;\
+  width: " + Math.round( 219 * scale_factor / 100 ) + "px;\
+  height: " + Math.round( 182 * scale_factor / 100 ) + "px;\
+  background: url('image/bubble.png');\
+  background-size: " + Math.round( 219 * scale_factor / 100 ) + "px " + Math.round( 182 * scale_factor / 100 ) + "px;\
+}\
+\
+.welcome {\
+  display: block;\
+  position: absolute;\
+  top: " + Math.round( 430 * scale_factor / 100 ) + "px;\
+  left: " + Math.round( 63 * scale_factor / 100 ) + "px;\
+  width: " + Math.round( 440 * scale_factor / 100 ) + "px;\
+  height: " + Math.round( 164 * scale_factor / 100 ) + "px;\
+  background: url('image/welcome.png');\
+  background-size: " + Math.round( 440 * scale_factor / 100 ) + "px " + Math.round( 164 * scale_factor / 100 ) + "px;\
+  -webkit-transform-origin: center center;\
+     -moz-transform-origin: center center;\
+       -o-transform-origin: center center;\
+          transform-origin: center center;\
+  -webkit-transform: scale3d(0,0,1);\
+     -moz-transform: scale3d(0,0,1);\
+       -o-transform: scale3d(0,0,1);\
+          transform: scale3d(0,0,1);\
+}";
+
+document.getElementsByTagName('head')[0].appendChild(style);
+
+//===============================
+//===  SPRING PHYSICS ENGINE  ===
+//===============================
+
+// Courtesy of: http://facebook.github.io/rebound/
+
+// BSD License For Rebound software
+
+// Copyright (c) 2013, Facebook, Inc. All rights reserved.
+
+// Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+// * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+// * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+var SpringSystem = function SpringSystem() {
+  this._springRegistry = {};
+  this._activeSprings = [];
+  this._listeners = [];
+  this._idleSpringIndices = [];
+  this._boundFrameCallback = bind(this._frameCallback, this);
+};
+
+extend(SpringSystem, {});
+
+extend(SpringSystem.prototype, {
+
+  _springRegistry: null,
+
+  _isIdle: true,
+
+  _lastTimeMillis: -1,
+
+  _activeSprings: null,
+
+  _listeners: null,
+
+  _idleSpringIndices: null,
+
+  _frameCallback: function() {
+    this.loop();
+  },
+
+  _frameCallbackId: null,
+
+  getIsIdle: function() {
+    return this._isIdle;
+  },
+
+  createSpring: function() {
+    var spring = new Spring(this);
+    this.registerSpring(spring);
+    return spring;
+  },
+
+  getSpringById: function (id) {
+    return this._springRegistry[id];
+  },
+
+  getAllSprings: function() {
+    return Object.values(this._springRegistry);
+  },
+
+  registerSpring: function(spring) {
+    this._springRegistry[spring.getId()] = spring;
+  },
+
+  deregisterSpring: function(spring) {
+    removeFirst(this._activeSprings, spring);
+    delete this._springRegistry[spring.getId()];
+  },
+
+  advance: function(time, deltaTime) {
+    while(this._idleSpringIndices.length > 0) this._idleSpringIndices.pop();
+    for (var i = 0, len = this._activeSprings.length; i < len; i++) {
+      var spring = this._activeSprings[i];
+      if (spring.systemShouldAdvance()) {
+        spring.advance(time / 1000.0, deltaTime / 1000.0);
+      } else {
+        this._idleSpringIndices.push(this._activeSprings.indexOf(spring));
+      }
+    }
+    while(this._idleSpringIndices.length > 0) {
+      var idx = this._idleSpringIndices.pop();
+      idx >= 0 && this._activeSprings.splice(idx, 1);
+    }
+  },
+
+  loop: function() {
+    var listener;
+    var currentTimeMillis = Date.now();
+    if (this._lastTimeMillis === -1) {
+      this._lastTimeMillis = currentTimeMillis -1;
+    }
+    var ellapsedMillis = currentTimeMillis - this._lastTimeMillis;
+    this._lastTimeMillis = currentTimeMillis;
+
+    var i = 0, len = this._listeners.length;
+    for (i = 0; i < len; i++) {
+      var listener = this._listeners[i];
+      listener.onBeforeIntegrate && listener.onBeforeIntegrate(this);
+    }
+
+    this.advance(currentTimeMillis, ellapsedMillis);
+    if (this._activeSprings.length === 0) {
+      this._isIdle = true;
+      this._lastTimeMillis = -1;
+    }
+
+    for (i = 0; i < len; i++) {
+      var listener = this._listeners[i];
+      listener.onAfterIntegrate && listener.onAfterIntegrate(this);
+    }
+
+    compatCancelAnimationFrame(this._frameCallbackId);
+    if (!this._isIdle) {
+      this._frameCallbackId =
+        compatRequestAnimationFrame(this._boundFrameCallback);
+    }
+  },
+
+  activateSpring: function(springId) {
+    var spring = this._springRegistry[springId];
+    if (this._activeSprings.indexOf(spring) == -1) {
+      this._activeSprings.push(spring);
+    }
+    if (this.getIsIdle()) {
+      this._isIdle = false;
+      compatCancelAnimationFrame(this._frameCallbackId);
+      this._frameCallbackId =
+        compatRequestAnimationFrame(this._boundFrameCallback);
+    }
+  },
+
+  addListener: function(listener) {
+    this._listeners.push(listener);
+  },
+
+  removeListener: function(listener) {
+    removeFirst(this._listeners, listener);
+  },
+
+  removeAllListeners: function() {
+    this._listeners = [];
+  }
+
+});
+
+// *** Spring ***
+
+var Spring = function Spring(springSystem) {
+  this._id = Spring._ID++;
+  this._springSystem = springSystem;
+  this._listeners = [];
+  this._currentState = new PhysicsState();
+  this._previousState = new PhysicsState();
+  this._tempState = new PhysicsState();
+};
+
+extend(Spring, {
+  _ID: 0,
+
+  MAX_DELTA_TIME_SEC: 0.064,
+
+  SOLVER_TIMESTEP_SEC: 0.001
+
+});
+
+extend(Spring.prototype, {
+
+  _id: 0,
+
+  _springConfig: null,
+
+  _overshootClampingEnabled: false,
+
+  _currentState: null,
+
+  _previousState: null,
+
+  _tempState: null,
+
+  _startValue: 0,
+
+  _endValue: 0,
+
+  _wasAtRest: true,
+
+  _restSpeedThreshold: 0.001,
+
+  _displacementFromRestThreshold: 0.001,
+
+  _listeners: null,
+
+  _timeAccumulator: 0,
+
+  _springSystem: null,
+
+  destroy: function() {
+    this._listeners = [];
+    this._springSystem.deregisterSpring(this);
+  },
+
+  getId: function() {
+    return this._id;
+  },
+
+  setSpringConfig: function(springConfig) {
+    this._springConfig = springConfig;
+    return this;
+  },
+
+  getSpringConfig: function() {
+    return this._springConfig;
+  },
+
+  setCurrentValue: function(currentValue) {
+    this._startValue = currentValue;
+    this._currentState.position = currentValue;
+    for (var i = 0, len = this._listeners.length; i < len; i++) {
+      var listener = this._listeners[i];
+      listener.onSpringUpdate && listener.onSpringUpdate(this);
+    }
+    return this;
+  },
+
+  getStartValue: function() {
+    return this._startValue;
+  },
+
+  getCurrentValue: function() {
+    return this._currentState.position;
+  },
+
+  getCurrentDisplacementDistance: function() {
+    return this.getDisplacementDistanceForState(this._currentState);
+  },
+
+  getDisplacementDistanceForState: function(state) {
+    return Math.abs(this._endValue - state.position);
+  },
+
+  setEndValue: function(endValue) {
+    if (this._endValue == endValue && this.isAtRest())  {
+      return this;
+    }
+    this._startValue = this.getCurrentValue();
+    this._endValue = endValue;
+    this._springSystem.activateSpring(this.getId());
+    for (var i = 0, len = this._listeners.length; i < len; i++) {
+      var listener = this._listeners[i];
+      listener.onSpringEndStateChange && listener.onSpringEndStateChange(this);
+    }
+    return this;
+  },
+
+  getEndValue: function() {
+    return this._endValue;
+  },
+
+  setVelocity: function(velocity) {
+    this._currentState.velocity = velocity;
+    return this;
+  },
+
+  getVelocity: function() {
+    return this._currentState.velocity;
+  },
+
+  setRestSpeedThreshold: function(restSpeedThreshold) {
+    this._restSpeedThreshold = restSpeedThreshold;
+    return this;
+  },
+
+  getRestSpeedThreshold: function() {
+    return this._restSpeedThreshold;
+  },
+
+  setRestDisplacementThreshold: function(displacementFromRestThreshold) {
+    this._displacementFromRestThreshold = displacementFromRestThreshold;
+  },
+
+  getRestDisplacementThreshold: function() {
+    return this._displacementFromRestThreshold;
+  },
+
+  setOvershootClampingEnabled: function(enabled) {
+    this._overshootClampingEnabled = enabled;
+    return this;
+  },
+
+  isOvershootClampingEnabled: function() {
+    return this._overshootClampingEnabled;
+  },
+
+  isOvershooting: function() {
+    return (this._startValue < this._endValue &&
+            this.getCurrentValue() > this._endValue) ||
+           (this._startValue > this._endValue &&
+            this.getCurrentValue() < this._endValue);
+  },
+
+  advance: function(time, realDeltaTime) {
+    var isAtRest = this.isAtRest();
+
+    if (isAtRest && this._wasAtRest) {
+      return;
+    }
+
+    var adjustedDeltaTime = realDeltaTime;
+    if (realDeltaTime > Spring.MAX_DELTA_TIME_SEC) {
+      adjustedDeltaTime = Spring.MAX_DELTA_TIME_SEC;
+    }
+
+    this._timeAccumulator += adjustedDeltaTime;
+
+    var tension = this._springConfig.tension,
+        friction = this._springConfig.friction,
+
+        position = this._currentState.position,
+        velocity = this._currentState.velocity,
+        tempPosition = this._tempState.position,
+        tempVelocity = this._tempState.velocity,
+
+        aVelocity, aAcceleration,
+        bVelocity, bAcceleration,
+        cVelocity, cAcceleration,
+        dVelocity, dAcceleration,
+
+        dxdt, dvdt;
+
+    while(this._timeAccumulator >= Spring.SOLVER_TIMESTEP_SEC) {
+
+      this._timeAccumulator -= Spring.SOLVER_TIMESTEP_SEC;
+
+      if (this._timeAccumulator < Spring.SOLVER_TIMESTEP_SEC) {
+        this._previousState.position = position;
+        this._previousState.velocity = velocity;
+      }
+
+      aVelocity = velocity;
+      aAcceleration = (tension * (this._endValue - tempPosition)) - friction * velocity;
+
+      tempPosition = position + aVelocity * Spring.SOLVER_TIMESTEP_SEC * 0.5;
+      tempVelocity = velocity + aAcceleration * Spring.SOLVER_TIMESTEP_SEC * 0.5;
+      bVelocity = tempVelocity;
+      bAcceleration = (tension * (this._endValue - tempPosition)) - friction * tempVelocity;
+
+      tempPosition = position + bVelocity * Spring.SOLVER_TIMESTEP_SEC * 0.5;
+      tempVelocity = velocity + bAcceleration * Spring.SOLVER_TIMESTEP_SEC * 0.5;
+      cVelocity = tempVelocity;
+      cAcceleration = (tension * (this._endValue - tempPosition)) - friction * tempVelocity;
+
+      tempPosition = position + cVelocity * Spring.SOLVER_TIMESTEP_SEC * 0.5;
+      tempVelocity = velocity + cAcceleration * Spring.SOLVER_TIMESTEP_SEC * 0.5;
+      dVelocity = tempVelocity;
+      dAcceleration = (tension * (this._endValue - tempPosition)) - friction * tempVelocity;
+
+      dxdt = 1.0/6.0 * (aVelocity + 2.0 * (bVelocity + cVelocity) + dVelocity);
+      dvdt = 1.0/6.0 *
+        (aAcceleration + 2.0 * (bAcceleration + cAcceleration) + dAcceleration);
+
+      position += dxdt * Spring.SOLVER_TIMESTEP_SEC;
+      velocity += dvdt * Spring.SOLVER_TIMESTEP_SEC;
+    }
+
+    this._tempState.position = tempPosition;
+    this._tempState.velocity = tempVelocity;
+
+    this._currentState.position = position;
+    this._currentState.velocity = velocity;
+
+    if (this._timeAccumulator > 0) {
+      this.interpolate(this._timeAccumulator / Spring.SOLVER_TIMESTEP_SEC);
+    }
+
+    if (this.isAtRest() ||
+        this._overshootClampingEnabled && this.isOvershooting()) {
+      this._startValue = this._endValue;
+      this._currentState.position = this._endValue;
+      this.setVelocity(0);
+      isAtRest = true;
+    }
+
+    var notifyActivate = false;
+    if (this._wasAtRest) {
+      this._wasAtRest = false;
+      notifyActivate = true;
+    }
+
+    var notifyAtRest = false;
+    if (isAtRest) {
+      this._wasAtRest = true;
+      notifyAtRest = true;
+    }
+
+    for (var i = 0, len = this._listeners.length; i < len; i++) {
+      var listener = this._listeners[i];
+      if (notifyActivate) {
+        listener.onSpringActivate && listener.onSpringActivate(this);
+      }
+
+      listener.onSpringUpdate && listener.onSpringUpdate(this);
+
+      if (notifyAtRest) {
+        listener.onSpringAtRest && listener.onSpringAtRest(this);
+      }
+    }
+  },
+
+  systemShouldAdvance: function() {
+    return !this.isAtRest() || !this.wasAtRest();
+  },
+
+  wasAtRest: function() {
+    return this._wasAtRest;
+  },
+
+  isAtRest: function() {
+    return Math.abs(this._currentState.velocity) < this._restSpeedThreshold &&
+           this.getDisplacementDistanceForState(this._currentState) <=
+             this._displacementFromRestThreshold;
+  },
+
+  setAtRest: function() {
+    this._endValue = this._currentState.position;
+    this._tempState.position = this._currentState.position;
+    this._currentState.velocity = 0;
+    return this;
+  },
+
+  interpolate: function(alpha) {
+    this._currentState.position = this._currentState.position *
+      alpha + this._previousState.position * (1 - alpha);
+    this._currentState.velocity = this._currentState.velocity *
+      alpha + this._previousState.velocity * (1 - alpha);
+  },
+
+  addListener: function(newListener) {
+    this._listeners.push(newListener);
+    return this;
+  },
+
+  removeListener: function(listenerToRemove) {
+    removeFirst(this._listeners, listenerToRemove);
+    return this;
+  },
+
+  removeAllListeners: function() {
+    this._listeners = [];
+    return this;
+  },
+
+  currentValueIsApproximately: function(value) {
+    return Math.abs(this.getCurrentValue() - value) <=
+      this.getRestDisplacementThreshold();
+  }
+
+});
+
+var PhysicsState = function PhysicsState() {};
+
+extend(PhysicsState.prototype, {
+  position: 0,
+  velocity: 0
+});
+
+var SpringConfig = function SpringConfig(tension, friction) {
+    this.tension = tension;
+    this.friction = friction;
+  };
+
+extend(SpringConfig, {
+  fromQcTensionAndFriction: function(qcTension, qcFriction) {
+    return new SpringConfig(
+      QcValueConverter.tensionFromQcValue(qcTension),
+      QcValueConverter.frictionFromQcValue(qcFriction));
+  }
+});
+
+extend(SpringConfig.prototype, {
+  friction: 0,
+  tension: 0
+});
+
+var QcValueConverter = {
+  tensionFromQcValue: function(qcValue) {
+    return (qcValue - 30.0) * 3.62 + 194.0;
+  },
+
+  qcValueFromTension: function(tension) {
+    return (tension - 194.0) / 3.62 + 30.0;
+  },
+
+  frictionFromQcValue: function(qcValue) {
+    return (qcValue - 8.0) * 3.0 + 25.0;
+  },
+
+  qcValueFromFriction: function(friction) {
+    return (friction - 25.0) / 3.0 + 8.0;
+  }
+};
+
+// Utilities
+var concat = Array.prototype.concat;
+var slice = Array.prototype.slice;
+
+function removeFirst(array, item) {
+  var idx = array.indexOf(item);
+  idx != -1 && array.splice(idx, 1);
+}
+
+function compatCancelAnimationFrame(id) {
+  return typeof window != 'undefined' &&
+    window.cancelAnimationFrame &&
+    cancelAnimationFrame(id);
+}
+
+// =====================================================
+// Pollyfill For: compatRequestAnimationFrame
+
+// Courtesy of: http://gist.github.com/paulirish/1579671
+
+// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+// http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
+
+// requestAnimationFrame polyfill by Erik Moller. fixes from Paul Irish and Tino Zijdel
+
+// MIT license
+
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());
+
+// =====================================================
+
+function compatRequestAnimationFrame(func) {
+  var meth;
+  if (typeof process != 'undefined') {
+    meth = process.nextTick;
+  } else {
+    meth = window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    window.oRequestAnimationFrame;
+  }
+  return meth(func);
+}
+
+function bind(func, target) {
+  args = slice.call(arguments, 2);
+  return function() {
+    func.apply(target, concat.call(args, slice.call(arguments)));
+  };
+}
+
+function extend(target, source) {
+  for (var key in source) {
+    if (source.hasOwnProperty(key)) {
+      target[key] = source[key];
+    }
+  }
+}
+
+(function() {
+  window.createSpring = function createSpring(springSystem, friction, tension, rawValues) {
+    var spring = springSystem.createSpring();
+    var springConfig;
+    if (rawValues) {
+      springConfig = new SpringConfig(friction, tension);
+    } else {
+      springConfig = SpringConfig.fromQcTensionAndFriction(friction, tension);
+    }
+    spring.setSpringConfig(springConfig);
+    spring.setCurrentValue(0);
+    return spring;
+  }
+
+  window.scaleX = function scaleX(el, val) {
+    el.style.mozTransform =
+    el.style.msTransform =
+    el.style.oTransform =
+    el.style.webkitTransform =
+    el.style.transform = 'scale3d(' + val + ', 1, 1)';
+  }
+
+  window.scale = function scale(el, val) {
+    el.style.mozTransform =
+    el.style.msTransform =
+    el.style.oTransform =
+    el.style.webkitTransform =
+    el.style.transform = 'scale3d(' + val + ', ' + val + ', 1)';
+  }
+
+  window.rotate = function rotate(el, val) {
+    el.style.mozTransform =
+    el.style.msTransform =
+    el.style.oTransform =
+    el.style.webkitTransform =
+    el.style.transform = 'rotate3d(1, 0, 0, ' + val + 'deg)';
+  }
+})();
+
+//=================================
+//===  SPARROWS BARN ANIMATION  ===
+//=================================
+
+var signSpring = function() {
+  var springSystem = new SpringSystem();
+  var spring = createSpring(springSystem, 80, 2); // tension=80, friction=2
+  var springConfig = spring.getSpringConfig();
+  var div = document.getElementById('sign');
+
+  spring.addListener({
+    el: null,
+    onSpringUpdate: function(spring) {
+      this.el = this.el || div;
+      var val = spring.getCurrentValue();
+      scaleX(this.el, val);
+    }
+  });
+
+  window.triggerSign = function triggerSign() {
+    spring.addListener({
+      onSpringAtRest: function() {
+        spring.removeListener(this);
+
+        div.onmousedown = function() {
+          document.onmouseup = releaseSign;
+          spring.setEndValue(.6);
+        };
+
+        triggerLogo();
+      }
+    });
+
+    div.className = 'sign_parked';
+
+    window.setTimeout( function() { spring.setEndValue(1); rubber.play(); }, 2500);
+  }
+
+  window.releaseSign = function releaseSign() {
+    document.onmouseup = null;
+    spring.setEndValue(1);
+  }
+}
+
+var logoSpring = function() {
+  var springSystem = new SpringSystem();
+  var spring = createSpring(springSystem, 15, 1); // tension=1, friction=1
+  var springConfig = spring.getSpringConfig();
+  var div = document.getElementById('logo');
+
+  spring.addListener({
+    el: null,
+    onSpringUpdate: function(spring) {
+      this.el = this.el || div;
+      var val = spring.getCurrentValue();
+      rotate(this.el, (val*90)-90);
+    }
+  });
+
+  window.triggerLogo = function triggerLogo() {
+    spring.addListener({
+      onSpringAtRest: function() {
+        spring.removeListener(this);
+
+        div.onmousedown = function() {
+          document.onmouseup = releaseLogo;
+          spring.setEndValue(.5);
+        };
+
+        triggerTitle();
+      }
+    });
+
+    div.style.visibility = 'visible';
+    spring.setEndValue(1);
+    swing.play();
+  }
+
+  window.releaseLogo = function releaseLogo() {
+    document.onmouseup = null;
+    spring.setEndValue(1);
+  }
+}
+
+var triggerTitle = function() {
+  var title = document.getElementById('title');
+
+  title.addEventListener('webkitTransitionEnd', triggerWelcome, false);
+  title.addEventListener('mozTransitionEnd', triggerWelcome, false);
+  title.addEventListener('msTransitionEnd', triggerWelcome, false);
+  title.addEventListener('oTransitionEnd', triggerWelcome, false);
+  title.addEventListener('otransitionend', triggerWelcome, false);
+  title.addEventListener('transitionend', triggerWelcome, false);
+
+  if ( title.style.hasOwnProperty('webkitMaskImage') ) {
+    title.className = 'title_alt';
+    title.style.webkitMaskPosition = '370px 0px';
+  }
+  else {
+    title.style.opacity = '1';
+  }
+
+  sizzle.play();
+}
+
+var welcomeSpring = function() {
+  var springSystem = new SpringSystem();
+  var spring = createSpring(springSystem, 100, 3); // tension=100, friction=3
+  var springConfig = spring.getSpringConfig();
+  var div = document.getElementById('welcome');
+
+  spring.addListener({
+    el: null,
+    onSpringUpdate: function(spring) {
+      this.el = this.el || div;
+      var val = spring.getCurrentValue();
+      scale(this.el, val);
+    }
+  });
+
+  window.triggerWelcome = function triggerWelcome() {
+    spring.addListener({
+      onSpringAtRest: function() {
+        spring.removeListener(this);
+
+        div.onmousedown = function() {
+          document.onmouseup = releaseWelcome;
+          spring.setEndValue(.75);
+        };
+
+        triggerBubble();
+      }
+    });
+
+    window.setTimeout( function() { spring.setEndValue(1); sproing.play(); }, 1000);
+  }
+
+  window.releaseWelcome = function releaseWelcome() {
+    document.onmouseup = null;
+    spring.setEndValue(1);
+  }
+}
+
+var allAudio = function() {
+  window.tractor = new Audio();
+  tractor.src = 'audio/tractor.wav';
+  tractor.type = "audio/wav";
+  tractor.volume = 1;
+
+  window.rubber = new Audio();
+  rubber.src = 'audio/rubber.wav';
+  rubber.type = "audio/wav";
+  rubber.volume = 1;
+
+  window.swing = new Audio();
+  swing.src = 'audio/swing.wav';
+  swing.type = "audio/wav";
+  swing.volume = 1;
+
+  window.sizzle = new Audio();
+  sizzle.src = 'audio/sizzle.wav';
+  sizzle.type = "audio/wav";
+  sizzle.volume = 1;
+
+  window.sproing = new Audio();
+  sproing.src = 'audio/sproing.wav';
+  sproing.type = "audio/wav";
+  sproing.volume = 1;
+
+  window.chirp = new Audio();
+  chirp.src = 'audio/sparrow.wav';
+  chirp.type = "audio/wav";
+  chirp.volume = .35;
+
+  chirp.addEventListener('ended', function(e)
+  {
+    window.setTimeout(function(){
+      document.getElementById('bubble').style.visibility = 'hidden';
+    }, 300);
+  }, false);
+
+  window.triggerBubble = function triggerBubble() {
+    document.getElementById('bubble').style.visibility = 'visible';
+    window.setTimeout(function(){chirp.play();}, 600);
+  };
+}
+
+var afterDOMContentLoaded = function() {
+  signSpring();
+  logoSpring();
+  welcomeSpring();
+  allAudio();
+}
+
+document.addEventListener('DOMContentLoaded', afterDOMContentLoaded, false);
+
+window.onload = function() {
+  var sign = document.getElementById('sign');
+
+  sign.addEventListener("webkitAnimationEnd", triggerSign, false);
+  sign.addEventListener("MSAnimationEnd", triggerSign, false);
+  sign.addEventListener("oanimationend", triggerSign, false);
+  sign.addEventListener("animationend", triggerSign, false);
+
+  window.setTimeout(function(){ sign.className = 'sign_drive'; tractor.play(); }, 1000);
+}
+</script>
+</head>
+<body>
+<section class="container">
+  <div id="sign" class="sign"><div id="title" class="title"></div></div>
+  <div id="welcome" class="welcome"></div>
+  <div id="logo" class="logo"><div id="bubble" class="bubble"></div></div>
+</section>
+</body>
+</html>
